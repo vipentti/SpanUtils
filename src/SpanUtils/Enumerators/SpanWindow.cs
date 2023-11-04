@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SpanUtils;
+namespace SpanUtils.Enumerators;
 
 /// <summary>
 /// A sliding window into a <see cref="Span{T}"/>
