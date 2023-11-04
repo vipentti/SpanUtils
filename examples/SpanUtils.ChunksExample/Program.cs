@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 int chunkSize = 2;
-int[] data = new[] { 0, 1, 2, 3, 4, 5};
+int[] data = new[] { 0, 1, 2, 3, 4, 5 };
 int[][] expectedChunks = new[]
 {
     new[] { 0, 1 },
