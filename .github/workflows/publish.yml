@@ -41,6 +41,8 @@ jobs:
         run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
         env:
           PublicNuGetApiKey: ${{ secrets.PUBLIC_NUGET_API_KEY }}
+          PackageOwner: ${{ vars.PACKAGE_OWNER }}
+          PublicNuGet: ${{ vars.PUBLIC_NUGET }}
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}
@@ -71,6 +73,8 @@ jobs:
         run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
         env:
           PublicNuGetApiKey: ${{ secrets.PUBLIC_NUGET_API_KEY }}
+          PackageOwner: ${{ vars.PACKAGE_OWNER }}
+          PublicNuGet: ${{ vars.PUBLIC_NUGET }}
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}
@@ -101,6 +105,8 @@ jobs:
         run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
         env:
           PublicNuGetApiKey: ${{ secrets.PUBLIC_NUGET_API_KEY }}
+          PackageOwner: ${{ vars.PACKAGE_OWNER }}
+          PublicNuGet: ${{ vars.PUBLIC_NUGET }}
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}

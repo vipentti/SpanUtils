@@ -2,6 +2,7 @@
 using Nuke.Common.CI.GitHubActions.Configuration;
 using Nuke.Common.Utilities;
 using Nuke.Components;
+using System;
 using System.Collections.Generic;
 
 [GitHubActions(
@@ -42,6 +43,11 @@ using System.Collections.Generic;
     {
         nameof(PublicNuGetApiKey),
     },
+    ImportVars = new[]
+    {
+        nameof(PackageOwner),
+        nameof(PublicNuGet),
+    },
     InvokedTargets = new[]
     {
         nameof(ITest.Test),
@@ -62,6 +68,24 @@ class CustomGithubActionsAttribute : GitHubActionsAttribute
     }
 
     public bool EmptyWorkflowTrigger { get; set; }
+
+    public string[] ImportVars { get; set; } = Array.Empty<string>();
+
+    protected override IEnumerable<(string Key, string Value)> GetImports()
+    {
+        foreach (var import in base.GetImports())
+        {
+            yield return import;
+        }
+
+        foreach (var variable in ImportVars)
+        {
+            yield return (variable, GetVariableValue(variable));
+        }
+
+        static string GetVariableValue(string variable)
+            => $"${{{{ vars.{variable.SplitCamelHumpsWithKnownWords().JoinUnderscore().ToUpperInvariant()} }}}}";
+    }
 
     protected override IEnumerable<GitHubActionsDetailedTrigger> GetTriggers()
     {
