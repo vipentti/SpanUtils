@@ -24,4 +24,13 @@ public static class ReadOnlySpanSelectExtensions
     /// <returns>Enumerator which maps the values contained in the source with the given selector</returns>
     public static ReadOnlySpanSelectEnumerator<T, U> GetReadOnlySelectEnumerator<T, U>(this ReadOnlySpan<T> source, Func<T, U> selector) =>
         new(source, selector);
+
+    /// <summary>
+    /// Enumerate over the source by mapping values with the given function
+    /// </summary>
+    /// <typeparam name="T">Input type</typeparam>
+    /// <typeparam name="U">Output type</typeparam>
+    /// <returns>Enumerator which maps the values contained in the source with the given selector</returns>
+    public static ReadOnlySpanSelectEnumerator<T, U> GetReadOnlySelectEnumerator<T, U>(this Span<T> source, Func<T, U> selector) =>
+        new(source, selector);
 }
