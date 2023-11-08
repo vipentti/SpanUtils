@@ -34,12 +34,18 @@ using System.Collections.Generic;
     GitHubActionsImage.UbuntuLatest,
     GitHubActionsImage.MacOsLatest,
     OnPushBranches = new[] { MainBranch },
-    OnPushTags = new[] { "*.*.*" },
     PublishArtifacts = true,
     PublishCondition = "${{ runner.os == 'Windows' }}",
     EmptyWorkflowTrigger = true,
     FetchDepth = 0, // fetch full history
-    InvokedTargets = new[] { nameof(ITest.Test), nameof(ValidateFormat), nameof(IPack.Pack), nameof(ValidatePackages) }
+    InvokedTargets = new[]
+    {
+        nameof(ITest.Test),
+        nameof(ValidateFormat),
+        nameof(IPack.Pack),
+        nameof(ValidatePackages),
+        nameof(IPublish.Publish),
+    }
     )]
 public partial class Build
 {

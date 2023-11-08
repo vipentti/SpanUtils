@@ -12,6 +12,7 @@ using Nuke.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
@@ -46,7 +47,7 @@ partial class Build : NukeBuild
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
-    [Parameter("Owner of the repository")] readonly string GitHubRepositoryOwner = null!;
+    [Parameter("Owner of the package")] readonly string PackageOwner = null!;
 
     [Parameter("Name of the remote - Default is 'origin'")] readonly string RemoteName = "origin";
 
@@ -62,18 +63,27 @@ partial class Build : NukeBuild
     string TagVersion => GitRepository.Tags?.SingleOrDefault(ValidTagRegex.IsMatch);
     bool IsTaggedBuild => !string.IsNullOrWhiteSpace(TagVersion);
 
-    bool IsMainBranch => GitRepository.Branch?.Equals(MainBranch, StringComparison.OrdinalIgnoreCase) ?? false;
+    static bool IsRunningOnWindows => RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
-    bool IsOriginalRepository => GitRepository.Identifier == $"{GitHubRepositoryOwner}/{RepositoryName}";
+    bool IsMainBranch => GitRepository.IsOnMainBranch();
+
+    bool IsOriginalRepository => GitRepository.Identifier == $"{PackageOwner}/{RepositoryName}";
+
+    bool IsFinalizeCommit => FinalizeChangeLogRegex.IsMatch(CommitMessage);
+
+    bool ShouldPublishToNuGet => IsMainBranch && IsTaggedBuild && IsOriginalRepository && IsRunningOnWindows && IsFinalizeCommit;
 
     protected override void OnBuildInitialized()
     {
         var version = GitVersion.InformationalVersion;
 
         Serilog.Log.Information("BUILD SETUP");
+        Serilog.Log.Information("PackageOwner:   {Owner}", PackageOwner ?? "N/A");
         Serilog.Log.Information("Configuration:  {Configuration}", Configuration);
         Serilog.Log.Information("Version:        {VersionSuffix}", version);
         Serilog.Log.Information("TagVersion:     {TagVersion}", TagVersion ?? "(null)");
+        Serilog.Log.Information("CommitMessage:  {CommitMessage}", CommitMessage);
+        Serilog.Log.Information("Publish:        {ShouldPublish}", ShouldPublishToNuGet);
     }
 
     string PublicNuGetSource => "https://api.nuget.org/v3/index.json";
@@ -83,10 +93,10 @@ partial class Build : NukeBuild
     string GitHubRegistrySource => GitHubActions switch
     {
         not null => $"https://nuget.pkg.github.com/{GitHubActions.RepositoryOwner}/index.json",
-        null => $"https://nuget.pkg.github.com/{GitHubRepositoryOwner}/index.json",
+        null => $"https://nuget.pkg.github.com/{PackageOwner}/index.json",
     };
 
-    bool UsePublicNuGet => false;
+    bool UsePublicNuGet => ShouldPublishToNuGet;
 
     string IPublish.NuGetApiKey => UsePublicNuGet ? PublicNuGetApiKey : GitHubRegistryApiKey;
     string IPublish.NuGetSource => UsePublicNuGet ? PublicNuGetSource : GitHubRegistrySource;
