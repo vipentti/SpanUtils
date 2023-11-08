@@ -51,7 +51,8 @@ partial class Build : NukeBuild
 
     [Parameter("Name of the remote - Default is 'origin'")] readonly string RemoteName = "origin";
 
-    [Parameter("")][Secret] readonly string PublicNuGetApiKey = null!;
+    [Parameter("Use public NuGet")] readonly bool PublicNuGet;
+    [Parameter("ApiKey for public NuGet")][Secret] readonly string PublicNuGetApiKey = null!;
     [Parameter("")][Secret] readonly string GitHubRegistryApiKey = null!;
 
     [Parameter("Reproducible build")] readonly bool ForceReproducible;
@@ -96,7 +97,7 @@ partial class Build : NukeBuild
         null => $"https://nuget.pkg.github.com/{PackageOwner}/index.json",
     };
 
-    bool UsePublicNuGet => ShouldPublishToNuGet;
+    bool UsePublicNuGet => PublicNuGet;
 
     string IPublish.NuGetApiKey => UsePublicNuGet ? PublicNuGetApiKey : GitHubRegistryApiKey;
     string IPublish.NuGetSource => UsePublicNuGet ? PublicNuGetSource : GitHubRegistrySource;

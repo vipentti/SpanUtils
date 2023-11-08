@@ -82,9 +82,13 @@
             "type": "string"
           }
         },
+        "PublicNuGet": {
+          "type": "boolean",
+          "description": "Use public NuGet"
+        },
         "PublicNuGetApiKey": {
           "type": "string",
-          "description": "",
+          "description": "ApiKey for public NuGet",
           "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
         "RemoteName": {

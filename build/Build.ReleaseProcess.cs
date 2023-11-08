@@ -20,6 +20,7 @@ partial class Build
 
     Target IPublish.Publish => _ => _
         .Requires(() => PublicNuGetApiKey)
+        .Requires(() => PackageOwner)
         .DependsOn(ValidatePackages)
         .OnlyWhenDynamic(() => ShouldPublishToNuGet)
         .Inherit<IPublish>()
