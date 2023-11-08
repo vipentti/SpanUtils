@@ -23,12 +23,24 @@ public readonly ref struct SpanWindow<T>
         Index = index;
     }
 
+    /// <summary>
+    /// Deconstruct this
+    /// </summary>
+    /// <param name="span">The current span</param>
+    /// <param name="index">The current index</param>
     public void Deconstruct(out Span<T> span, out int index)
     {
         span = Span;
         index = Index;
     }
 
+    /// <summary>
+    /// Support implicit conversion
+    /// </summary>
     public static implicit operator Span<T>(SpanWindow<T> entry) => entry.Span;
+
+    /// <summary>
+    /// Support implicit conversion
+    /// </summary>
     public static implicit operator ReadOnlySpan<T>(SpanWindow<T> entry) => entry.Span;
 }

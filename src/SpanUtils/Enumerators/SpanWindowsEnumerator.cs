@@ -23,16 +23,31 @@ public ref struct SpanWindowsEnumerator<T>
         _index = 0;
     }
 
-    // Needed to be compatible with the foreach operator
+    /// <summary>
+    /// Returns this instance as an enumerator.
+    /// </summary>
     public readonly SpanWindowsEnumerator<T> GetEnumerator() => this;
 
+    /// <summary>
+    /// Gets the current window
+    /// </summary>
     public SpanWindow<T> Current { get; private set; }
 
+    /// <summary>
+    /// Resets this enumerator
+    /// </summary>
     public void Reset()
     {
         _index = 0;
     }
 
+    /// <summary>
+    /// Advances the enumerator to the next window in the span.
+    /// </summary>
+    /// <returns>
+    /// True if the enumerator successfully advanced to the next window; false if
+    /// the enumerator has advanced past the end of the span.
+    /// </returns>
     public bool MoveNext()
     {
         var span = _span;

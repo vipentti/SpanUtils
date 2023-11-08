@@ -24,25 +24,39 @@ public ref struct ReadOnlySpanSelectEnumerator<T, U>
         _span = span;
         _index = -1;
         _selector = selector;
+        Current = default!;
     }
 
-#if NETSTANDARD2_0_OR_GREATER || NET6_0_OR_GREATER
+    /// <summary>
+    /// Returns the length of the original span
+    /// </summary>
     public readonly int Length => _span.Length;
 
+    /// <summary>
+    /// Returns this instance as an enumerator.
+    /// </summary>
     public readonly ReadOnlySpanSelectEnumerator<T, U> GetEnumerator() => this;
-#else
-    public int Length => _span.Length;
 
-    public ReadOnlySpanSelectEnumerator<T, U> GetEnumerator() => this;
-#endif
+    /// <summary>
+    /// Gets the current value
+    /// </summary>
+    public U Current { get; private set; }
 
-    public U Current { get; private set; } = default!;
-
+    /// <summary>
+    /// Resets this enumerator
+    /// </summary>
     public void Reset()
     {
         _index = -1;
     }
 
+    /// <summary>
+    /// Advances the enumerator to the next element in the span.
+    /// </summary>
+    /// <returns>
+    /// True if the enumerator successfully advanced to the next element; false if
+    /// the enumerator has advanced past the end of the span.
+    /// </returns>
     public bool MoveNext()
     {
         var next = _index + 1;

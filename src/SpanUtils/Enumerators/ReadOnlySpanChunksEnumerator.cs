@@ -33,16 +33,31 @@ public ref struct ReadOnlySpanChunksEnumerator<T>
         _index = 0;
     }
 
-    // Needed to be compatible with the foreach operator
+    /// <summary>
+    /// Returns this instance as an enumerator.
+    /// </summary>
     public readonly ReadOnlySpanChunksEnumerator<T> GetEnumerator() => this;
 
+    /// <summary>
+    /// Gets the current chunk
+    /// </summary>
     public ReadOnlySpanChunk<T> Current { get; private set; }
 
+    /// <summary>
+    /// Resets this enumerator
+    /// </summary>
     public void Reset()
     {
         _index = 0;
     }
 
+    /// <summary>
+    /// Advances the enumerator to the next chunk in the span.
+    /// </summary>
+    /// <returns>
+    /// True if the enumerator successfully advanced to the next chunk; false if
+    /// the enumerator has advanced past the end of the span.
+    /// </returns>
     public bool MoveNext()
     {
         var span = _span;

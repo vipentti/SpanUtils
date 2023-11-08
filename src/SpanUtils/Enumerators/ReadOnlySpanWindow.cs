@@ -12,6 +12,9 @@ public readonly ref struct ReadOnlySpanWindow<T>
     /// </summary>
     public ReadOnlySpan<T> Span { get; }
 
+    /// <summary>
+    /// Index of the first element of this window inside the original span
+    /// </summary>
     public int Index { get; }
 
     internal ReadOnlySpanWindow(ReadOnlySpan<T> span, int index)
@@ -20,11 +23,19 @@ public readonly ref struct ReadOnlySpanWindow<T>
         Index = index;
     }
 
+    /// <summary>
+    /// Deconstruct this
+    /// </summary>
+    /// <param name="span">The current span</param>
+    /// <param name="index">The current index</param>
     public void Deconstruct(out ReadOnlySpan<T> span, out int index)
     {
         span = Span;
         index = Index;
     }
 
+    /// <summary>
+    /// Support implicit conversion
+    /// </summary>
     public static implicit operator ReadOnlySpan<T>(ReadOnlySpanWindow<T> entry) => entry.Span;
 }
