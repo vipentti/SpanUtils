@@ -38,6 +38,10 @@ using System.Collections.Generic;
     PublishCondition = "${{ runner.os == 'Windows' }}",
     EmptyWorkflowTrigger = true,
     FetchDepth = 0, // fetch full history
+    ImportSecrets = new[]
+    {
+        nameof(PublicNuGetApiKey),
+    },
     InvokedTargets = new[]
     {
         nameof(ITest.Test),
