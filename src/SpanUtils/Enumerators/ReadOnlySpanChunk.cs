@@ -23,11 +23,19 @@ public readonly ref struct ReadOnlySpanChunk<T>
     /// </summary>
     public int Index { get; }
 
+    /// <summary>
+    /// Deconstruct this
+    /// </summary>
+    /// <param name="span">The current span</param>
+    /// <param name="index">The current index</param>
     public void Deconstruct(out ReadOnlySpan<T> span, out int index)
     {
         span = Span;
         index = Index;
     }
 
+    /// <summary>
+    /// Support implicit conversion
+    /// </summary>
     public static implicit operator ReadOnlySpan<T>(ReadOnlySpanChunk<T> entry) => entry.Span;
 }

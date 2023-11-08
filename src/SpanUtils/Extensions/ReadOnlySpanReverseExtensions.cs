@@ -3,6 +3,9 @@ using System;
 
 namespace SpanUtils.Extensions;
 
+/// <summary>
+/// Extension methods for arrays, <see cref="ReadOnlySpan{T}"/> and <see cref="Span{T}"/>
+/// </summary>
 public static class ReadOnlySpanReverseExtensions
 {
     /// <summary>
