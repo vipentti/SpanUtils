@@ -20,8 +20,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - '*.*.*'
   workflow_dispatch: # Allow running the workflow manually from the GitHub UI
 
 jobs:
@@ -39,8 +37,8 @@ jobs:
             .nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj', '**/Directory.Packages.props') }}
-      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages'
-        run: ./build.cmd Test ValidateFormat Pack ValidatePackages
+      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages, Publish'
+        run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}
@@ -67,8 +65,8 @@ jobs:
             .nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj', '**/Directory.Packages.props') }}
-      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages'
-        run: ./build.cmd Test ValidateFormat Pack ValidatePackages
+      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages, Publish'
+        run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}
@@ -95,8 +93,8 @@ jobs:
             .nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj', '**/Directory.Packages.props') }}
-      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages'
-        run: ./build.cmd Test ValidateFormat Pack ValidatePackages
+      - name: 'Run: Test, ValidateFormat, Pack, ValidatePackages, Publish'
+        run: ./build.cmd Test ValidateFormat Pack ValidatePackages Publish
       - name: 'Publish: test-results'
         uses: actions/upload-artifact@v3
         if: ${{ runner.os == 'Windows' }}
