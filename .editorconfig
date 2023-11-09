@@ -36,8 +36,11 @@ insert_final_newline = true
 
 # Organize usings
 dotnet_separate_import_directive_groups = false
-dotnet_sort_system_directives_first = false
-file_header_template = unset
+dotnet_sort_system_directives_first = true
+
+# Require file header
+file_header_template = Copyright 2023 Ville Penttinen\nDistributed under the MIT License.\nhttps://github.com/vipentti/SpanUtils/blob/main/LICENSE.md
+dotnet_diagnostic.IDE0073.severity = warning
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = false

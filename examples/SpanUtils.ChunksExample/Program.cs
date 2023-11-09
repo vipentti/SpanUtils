@@ -1,5 +1,9 @@
-﻿using SpanUtils.Extensions;
+﻿// Copyright 2023 Ville Penttinen
+// Distributed under the MIT License.
+// https://github.com/vipentti/SpanUtils/blob/main/LICENSE.md
+
 using System.Diagnostics;
+using SpanUtils.Extensions;
 
 int chunkSize = 2;
 int[] data = new[] { 0, 1, 2, 3, 4, 5 };
