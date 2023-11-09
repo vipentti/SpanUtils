@@ -40,23 +40,12 @@ public class SpanReverseTests
     }
 #endif
 
-    public static readonly TheoryData<int[], int[]> Reverse = new()
-    {
+    public static readonly TheoryData<int[], int[]> Reverse =
+        new()
         {
-            Array.Empty<int>(),
-            Array.Empty<int>()
-        },
-        {
-            new int[] { 0 },
-            new int[] { 0 }
-        },
-        {
-            new int[] { 0, 1 },
-            new int[] { 1, 0 }
-        },
-        {
-            new[] { 0, 1, 2, },
-            new[] { 2, 1, 0, }
-        },
-    };
+            { Array.Empty<int>(), Array.Empty<int>() },
+            { new int[] { 0 }, new int[] { 0 } },
+            { new int[] { 0, 1 }, new int[] { 1, 0 } },
+            { new[] { 0, 1, 2, }, new[] { 2, 1, 0, } },
+        };
 }

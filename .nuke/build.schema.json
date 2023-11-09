@@ -96,10 +96,13 @@
           "items": {
             "type": "string",
             "enum": [
+              "CheckCsharpier",
               "Compile",
               "FinalizeRelease",
               "FinishChangelog",
               "Format",
+              "FormatCsharpier",
+              "InstallCsharpier",
               "InstallLinters",
               "Lint",
               "Pack",
@@ -121,10 +124,13 @@
           "items": {
             "type": "string",
             "enum": [
+              "CheckCsharpier",
               "Compile",
               "FinalizeRelease",
               "FinishChangelog",
               "Format",
+              "FormatCsharpier",
+              "InstallCsharpier",
               "InstallLinters",
               "Lint",
               "Pack",

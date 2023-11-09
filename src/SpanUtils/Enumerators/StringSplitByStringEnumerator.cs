@@ -24,7 +24,8 @@ public ref struct StringSplitByStringEnumerator
     internal StringSplitByStringEnumerator(
         ReadOnlySpan<char> str,
         string sep,
-        StringSplitOptions options)
+        StringSplitOptions options
+    )
     {
         _options = options;
         _remaining = str;
@@ -77,13 +78,16 @@ public ref struct StringSplitByStringEnumerator
         var options = _options;
         var empty = _yieldEmpty;
 
-        while (StringSplitUtils.TryMoveNext(
-            ref span,
-            ref empty,
-            span.IndexOf(sep),
-            len,
-            options,
-            out var next))
+        while (
+            StringSplitUtils.TryMoveNext(
+                ref span,
+                ref empty,
+                span.IndexOf(sep),
+                len,
+                options,
+                out var next
+            )
+        )
         {
             if (_options.HasFlag(StringSplitOptions.RemoveEmptyEntries) && next.IsEmpty)
             {

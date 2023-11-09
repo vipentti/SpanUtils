@@ -23,7 +23,8 @@ public ref struct StringSplitByCharEnumerator
     internal StringSplitByCharEnumerator(
         ReadOnlySpan<char> str,
         char sep,
-        StringSplitOptions options)
+        StringSplitOptions options
+    )
     {
         _sep = sep;
         _options = options;
@@ -55,13 +56,16 @@ public ref struct StringSplitByCharEnumerator
         var options = _options;
         var empty = _yieldEmpty;
 
-        while (StringSplitUtils.TryMoveNext(
-            ref span,
-            ref empty,
-            span.IndexOf(sep),
-            1,
-            options,
-            out var next))
+        while (
+            StringSplitUtils.TryMoveNext(
+                ref span,
+                ref empty,
+                span.IndexOf(sep),
+                1,
+                options,
+                out var next
+            )
+        )
         {
             if (_options.HasFlag(StringSplitOptions.RemoveEmptyEntries) && next.IsEmpty)
             {

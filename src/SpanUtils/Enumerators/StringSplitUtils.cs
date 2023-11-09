@@ -14,7 +14,8 @@ internal static class StringSplitUtils
         int index,
         int stride,
         StringSplitOptions options,
-        out ReadOnlySpan<char> next)
+        out ReadOnlySpan<char> next
+    )
     {
         if (yieldEmpty)
         {

@@ -30,8 +30,11 @@ public static class SpanChunksExtensions
     /// <param name="size">Size of each chunk</param>
     /// <param name="exact">Whether only chunks matching the exact size will be enumerated. Default is <c>true</c></param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static SpanChunksEnumerator<T> GetChunksEnumerator<T>(this T[] source, int size, bool exact) =>
-        new(source, size, exact);
+    public static SpanChunksEnumerator<T> GetChunksEnumerator<T>(
+        this T[] source,
+        int size,
+        bool exact
+    ) => new(source, size, exact);
 
     /// <summary>
     /// Enumerate chunks inside the given source
@@ -51,6 +54,9 @@ public static class SpanChunksExtensions
     /// <param name="size">Size of each chunk</param>
     /// <param name="exact">Whether only chunks matching the exact size will be enumerated. Default is <c>true</c></param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static SpanChunksEnumerator<T> GetChunksEnumerator<T>(this Span<T> source, int size, bool exact) =>
-        new(source, size, exact);
+    public static SpanChunksEnumerator<T> GetChunksEnumerator<T>(
+        this Span<T> source,
+        int size,
+        bool exact
+    ) => new(source, size, exact);
 }
