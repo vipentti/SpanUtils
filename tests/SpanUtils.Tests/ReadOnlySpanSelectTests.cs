@@ -19,7 +19,7 @@ public class ReadOnlySpanSelectTests
     {
         var result = new List<int>();
 
-        foreach (var item in data.GetReadOnlySelectEnumerator(Methods[method]))
+        foreach (var item in data.EnumerateReadOnlySelect(Methods[method]))
         {
             result.Add(item);
         }

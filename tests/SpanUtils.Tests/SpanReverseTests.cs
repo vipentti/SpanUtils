@@ -14,7 +14,7 @@ public class SpanReverseTests
     {
         var result = new List<int>();
 
-        foreach (var item in data.GetReverseEnumerator())
+        foreach (var item in data.EnumerateReverse())
         {
             result.Add(item);
         }
@@ -28,7 +28,7 @@ public class SpanReverseTests
     {
         var data = new[] { 0, 1, 2, 3 };
 
-        var enu = data.GetReverseEnumerator();
+        var enu = data.EnumerateReverse();
 
         while (enu.MoveNext())
         {

@@ -13,7 +13,7 @@ public class ReadOnlySpanWindowsTests
     [MemberData(nameof(SpanWindowsTests.Windows), MemberType = typeof(SpanWindowsTests))]
     public void Produces_Expected_Windows(int[] data, int windowSize, int[][] expected)
     {
-        var enu = data.GetReadOnlyWindowsEnumerator(windowSize);
+        var enu = data.EnumerateReadOnlyWindows(windowSize);
 
         using (new AssertionScope())
         {

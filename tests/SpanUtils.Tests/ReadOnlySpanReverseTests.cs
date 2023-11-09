@@ -14,7 +14,7 @@ public class ReadOnlySpanReverseTests
     {
         var result = new List<int>();
 
-        foreach (var item in data.GetReadOnlyReverseEnumerator())
+        foreach (var item in data.EnumerateReadOnlyReverse())
         {
             result.Add(item);
         }

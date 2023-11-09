@@ -13,7 +13,7 @@ public class SpanWindowsTests
     [MemberData(nameof(Windows))]
     public void Produces_Expected_Windows(int[] data, int windowSize, int[][] expected)
     {
-        var enu = data.GetWindowsEnumerator(windowSize);
+        var enu = data.EnumerateWindows(windowSize);
 
         using (new AssertionScope())
         {

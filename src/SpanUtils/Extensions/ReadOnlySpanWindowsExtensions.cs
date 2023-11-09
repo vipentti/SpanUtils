@@ -19,7 +19,7 @@ public static class ReadOnlySpanWindowsExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each sliding window</param>
     /// <returns>Enumerator which yields the sliding windows.</returns>
-    public static ReadOnlySpanWindowsEnumerator<T> GetReadOnlyWindowsEnumerator<T>(
+    public static ReadOnlySpanWindowsEnumerator<T> EnumerateReadOnlyWindows<T>(
         this T[] source,
         int size
     ) => new(source, size);
@@ -31,7 +31,7 @@ public static class ReadOnlySpanWindowsExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each sliding window</param>
     /// <returns>Enumerator which yields the sliding windows.</returns>
-    public static ReadOnlySpanWindowsEnumerator<T> GetReadOnlyWindowsEnumerator<T>(
+    public static ReadOnlySpanWindowsEnumerator<T> EnumerateReadOnlyWindows<T>(
         this ReadOnlySpan<T> source,
         int size
     ) => new(source, size);
@@ -43,7 +43,7 @@ public static class ReadOnlySpanWindowsExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each sliding window</param>
     /// <returns>Enumerator which yields the sliding windows.</returns>
-    public static ReadOnlySpanWindowsEnumerator<T> GetReadOnlyWindowsEnumerator<T>(
+    public static ReadOnlySpanWindowsEnumerator<T> EnumerateReadOnlyWindows<T>(
         this Span<T> source,
         int size
     ) => new(source, size);

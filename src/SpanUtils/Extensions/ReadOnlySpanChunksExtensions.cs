@@ -19,7 +19,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each chunk</param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this T[] source,
         int size
     ) => new(source, size);
@@ -32,7 +32,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="size">Size of each chunk</param>
     /// <param name="exact">Whether only chunks matching the exact size will be enumerated. Default is <c>true</c></param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this T[] source,
         int size,
         bool exact
@@ -45,7 +45,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each chunk</param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this ReadOnlySpan<T> source,
         int size
     ) => new(source, size);
@@ -58,7 +58,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="size">Size of each chunk</param>
     /// <param name="exact">Whether only chunks matching the exact size will be enumerated. Default is <c>true</c></param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this ReadOnlySpan<T> source,
         int size,
         bool exact
@@ -71,7 +71,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="source">Source values to enumerate</param>
     /// <param name="size">Size of each chunk</param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this Span<T> source,
         int size
     ) => new(source, size);
@@ -84,7 +84,7 @@ public static class ReadOnlySpanChunksExtensions
     /// <param name="size">Size of each chunk</param>
     /// <param name="exact">Whether only chunks matching the exact size will be enumerated. Default is <c>true</c></param>
     /// <returns>Enumerator which yields the chunks.</returns>
-    public static ReadOnlySpanChunksEnumerator<T> GetReadOnlyChunksEnumerator<T>(
+    public static ReadOnlySpanChunksEnumerator<T> EnumerateReadOnlyChunks<T>(
         this Span<T> source,
         int size,
         bool exact

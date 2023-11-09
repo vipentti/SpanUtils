@@ -15,7 +15,7 @@ public class SpanChunksTests
     {
         using (new AssertionScope())
         {
-            var enu = data.GetChunksEnumerator(chunkSize, exact);
+            var enu = data.EnumerateChunks(chunkSize, exact);
             foreach (var row in expected)
             {
                 enu.MoveNext().Should().BeTrue();
@@ -45,7 +45,7 @@ public class SpanChunksTests
             .Invoking(() =>
             {
                 var data = new[] { 0, };
-                _ = data.GetChunksEnumerator(0);
+                _ = data.EnumerateChunks(0);
             })
             .Should()
             .ThrowExactly<ArgumentException>()

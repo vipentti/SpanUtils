@@ -18,7 +18,7 @@ public static class SpanReverseExtensions
     /// <typeparam name="T">Type of values</typeparam>
     /// <param name="source">Source to enumerate</param>
     /// <returns>Enumerator which yields the values in reverse.</returns>
-    public static SpanReverseEnumerator<T> GetReverseEnumerator<T>(this T[] source) => new(source);
+    public static SpanReverseEnumerator<T> EnumerateReverse<T>(this T[] source) => new(source);
 
     /// <summary>
     /// Enumerate the contents of the source in reverse.
@@ -26,6 +26,5 @@ public static class SpanReverseExtensions
     /// <typeparam name="T">Type of values</typeparam>
     /// <param name="source">Source to enumerate</param>
     /// <returns>Enumerator which yields the values in reverse.</returns>
-    public static SpanReverseEnumerator<T> GetReverseEnumerator<T>(this Span<T> source) =>
-        new(source);
+    public static SpanReverseEnumerator<T> EnumerateReverse<T>(this Span<T> source) => new(source);
 }

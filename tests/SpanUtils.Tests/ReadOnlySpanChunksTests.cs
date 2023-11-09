@@ -13,7 +13,7 @@ public class ReadOnlySpanChunksTests
     [MemberData(nameof(SpanChunksTests.Chunks), MemberType = typeof(SpanChunksTests))]
     public void Produces_Expected_Chunks(int[] data, int chunkSize, bool exact, int[][] expected)
     {
-        var enu = data.GetReadOnlyChunksEnumerator(chunkSize, exact);
+        var enu = data.EnumerateReadOnlyChunks(chunkSize, exact);
 
         using (new AssertionScope())
         {
@@ -46,7 +46,7 @@ public class ReadOnlySpanChunksTests
             .Invoking(() =>
             {
                 var data = new[] { 0, };
-                _ = data.GetReadOnlyChunksEnumerator(0);
+                _ = data.EnumerateReadOnlyChunks(0);
             })
             .Should()
             .ThrowExactly<ArgumentException>()

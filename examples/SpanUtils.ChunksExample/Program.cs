@@ -12,7 +12,7 @@ int[][] expectedChunks = new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 },
 
 {
     int index = 0;
-    foreach (Span<int> chunk in data.GetChunksEnumerator(chunkSize, exact: true))
+    foreach (Span<int> chunk in data.EnumerateChunks(chunkSize, exact: true))
     {
         Debug.Assert(chunk.SequenceEqual(expectedChunks[index]));
         ++index;
@@ -21,7 +21,7 @@ int[][] expectedChunks = new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 },
 
 {
     int index = 0;
-    foreach (ReadOnlySpan<int> chunk in data.GetReadOnlyChunksEnumerator(chunkSize, exact: true))
+    foreach (ReadOnlySpan<int> chunk in data.EnumerateReadOnlyChunks(chunkSize, exact: true))
     {
         Debug.Assert(chunk.SequenceEqual(expectedChunks[index]));
         ++index;
@@ -32,7 +32,7 @@ int[][] expectedChunks = new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 },
     Span<int> dataSpan = data;
     int index = 0;
     foreach (
-        ReadOnlySpan<int> chunk in dataSpan.GetReadOnlyChunksEnumerator(chunkSize, exact: true)
+        ReadOnlySpan<int> chunk in dataSpan.EnumerateReadOnlyChunks(chunkSize, exact: true)
     )
     {
         Debug.Assert(chunk.SequenceEqual(expectedChunks[index]));
@@ -44,7 +44,7 @@ int[][] expectedChunks = new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 },
     ReadOnlySpan<int> readOnlyDataSpan = data;
     int index = 0;
     foreach (
-        ReadOnlySpan<int> chunk in readOnlyDataSpan.GetReadOnlyChunksEnumerator(
+        ReadOnlySpan<int> chunk in readOnlyDataSpan.EnumerateReadOnlyChunks(
             chunkSize,
             exact: true
         )
