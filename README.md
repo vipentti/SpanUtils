@@ -40,7 +40,7 @@ int[][] expectedChunks = new[]
 };
 
 int index = 0;
-foreach (Span<int> chunk in data.GetChunksEnumerator(chunkSize, exact: true))
+foreach (Span<int> chunk in data.EnumerateChunks(chunkSize, exact: true))
 {
     Debug.Assert(chunk.SequenceEqual(expectedChunks[index]));
     ++index;
