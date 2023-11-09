@@ -33,7 +33,7 @@ namespace build;
     GitHubActionsImage.MacOsLatest
     , OnPushBranches = new[] { MainBranch }
 )]
-class Build : StandardNukeBuild/*, IUseCsharpier*/
+class Build : StandardNukeBuild, IUseCsharpier
 {
     public Solution CurrentSolution => From<IHazSolution>().Solution;
 
@@ -47,9 +47,9 @@ class Build : StandardNukeBuild/*, IUseCsharpier*/
     public override IEnumerable<IProvideLinter> Linters => new[]
     {
         From<IUseDotNetFormat>().Linter,
-        // From<IUseCsharpier>().Linter,
+        From<IUseCsharpier>().Linter,
     };
-    // bool IUseCsharpier.UseGlobalTool { get; } = true;
+    bool IUseCsharpier.UseGlobalTool { get; } = true;
 
     public override IEnumerable<Project> TestProjects => CurrentSolution.GetAllProjects("*Tests*");
 

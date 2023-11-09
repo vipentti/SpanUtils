@@ -10,10 +10,8 @@ public class ReadOnlySpanSelectTests
 {
     public const string AddOne = "AddOne";
 
-    public static readonly Dictionary<string, Func<int, int>> Methods = new()
-    {
-        [AddOne] = it => it + 1,
-    };
+    public static readonly Dictionary<string, Func<int, int>> Methods =
+        new() { [AddOne] = it => it + 1, };
 
     [Theory]
     [MemberData(nameof(Selections), MemberType = typeof(ReadOnlySpanSelectTests))]
@@ -29,17 +27,10 @@ public class ReadOnlySpanSelectTests
         result.Should().BeEquivalentTo(expected);
     }
 
-    public static readonly TheoryData<int[], string, int[]> Selections = new()
-    {
+    public static readonly TheoryData<int[], string, int[]> Selections =
+        new()
         {
-            new[] { 0, 1, 2},
-            AddOne,
-            new[] { 1, 2, 3}
-        },
-        {
-            new[] { 3, 4, 5},
-            AddOne,
-            new[] { 4, 5, 6}
-        },
-    };
+            { new[] { 0, 1, 2 }, AddOne, new[] { 1, 2, 3 } },
+            { new[] { 3, 4, 5 }, AddOne, new[] { 4, 5, 6 } },
+        };
 }

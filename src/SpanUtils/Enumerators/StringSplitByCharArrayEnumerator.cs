@@ -23,11 +23,13 @@ public ref struct StringSplitByCharArrayEnumerator
     internal StringSplitByCharArrayEnumerator(
         ReadOnlySpan<char> str,
         char[] sep,
-        StringSplitOptions options)
+        StringSplitOptions options
+    )
     {
-        _sep = sep is null || sep.Length == 0
-            ? (ReadOnlySpan<char>)StringSplitUtils.WhitespaceChars
-            : (ReadOnlySpan<char>)sep;
+        _sep =
+            sep is null || sep.Length == 0
+                ? (ReadOnlySpan<char>)StringSplitUtils.WhitespaceChars
+                : (ReadOnlySpan<char>)sep;
         _options = options;
         _remaining = str;
         _yieldEmpty = false;
@@ -58,13 +60,16 @@ public ref struct StringSplitByCharArrayEnumerator
         var options = _options;
         var empty = _yieldEmpty;
 
-        while (StringSplitUtils.TryMoveNext(
-            ref span,
-            ref empty,
-            span.IndexOfAny(sep),
-            1,
-            options,
-            out var next))
+        while (
+            StringSplitUtils.TryMoveNext(
+                ref span,
+                ref empty,
+                span.IndexOfAny(sep),
+                1,
+                options,
+                out var next
+            )
+        )
         {
             if (_options.HasFlag(StringSplitOptions.RemoveEmptyEntries) && next.IsEmpty)
             {

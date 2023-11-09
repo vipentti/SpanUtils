@@ -131,4 +131,3 @@ public ref struct SpanReverseEnumerator<T>
 }
 
 #endif
-

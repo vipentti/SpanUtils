@@ -42,11 +42,14 @@ public class ReadOnlySpanChunksTests
     [Fact]
     public void ThrowsWhenChunkSizeIsZero()
     {
-        FluentActions.Invoking(() =>
-        {
-            var data = new[] { 0, };
-            _ = data.GetReadOnlyChunksEnumerator(0);
-        }).Should().ThrowExactly<ArgumentException>()
+        FluentActions
+            .Invoking(() =>
+            {
+                var data = new[] { 0, };
+                _ = data.GetReadOnlyChunksEnumerator(0);
+            })
+            .Should()
+            .ThrowExactly<ArgumentException>()
             .WithMessage("Chunk size must be greater than 0*");
     }
 }

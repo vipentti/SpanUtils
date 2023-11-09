@@ -44,8 +44,11 @@ public static class StringExtensions
     /// <param name="separator">A character that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(this string input, char separator, StringSplitOptions options) =>
-        new(input.AsSpan(), separator, options);
+    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(
+        this string input,
+        char separator,
+        StringSplitOptions options
+    ) => new(input.AsSpan(), separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -54,8 +57,11 @@ public static class StringExtensions
     /// <param name="separator">A character that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(this ReadOnlySpan<char> input, char separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(
+        this ReadOnlySpan<char> input,
+        char separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -64,8 +70,11 @@ public static class StringExtensions
     /// <param name="separator">A character that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(this Span<char> input, char separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByCharEnumerator EnumerateSplitSubstrings(
+        this Span<char> input,
+        char separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
     #endregion
 
     #region CharArray
@@ -76,8 +85,11 @@ public static class StringExtensions
     /// <param name="separator">An array of characters that delimit the substrings in this string or an empty array.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one or more characters in <paramref name="separator"/></returns>
-    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(this string input, char[] separator, StringSplitOptions options) =>
-        new(input.AsSpan(), separator, options);
+    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(
+        this string input,
+        char[] separator,
+        StringSplitOptions options
+    ) => new(input.AsSpan(), separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -86,8 +98,11 @@ public static class StringExtensions
     /// <param name="separator">An array of characters that delimit the substrings in this string or an empty array.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one or more characters in <paramref name="separator"/></returns>
-    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(this ReadOnlySpan<char> input, char[] separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(
+        this ReadOnlySpan<char> input,
+        char[] separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -96,8 +111,11 @@ public static class StringExtensions
     /// <param name="separator">An array of characters that delimit the substrings in this string or an empty array.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one or more characters in <paramref name="separator"/></returns>
-    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(this Span<char> input, char[] separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByCharArrayEnumerator EnumerateSplitSubstrings(
+        this Span<char> input,
+        char[] separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
     #endregion
 
     #region String
@@ -108,8 +126,11 @@ public static class StringExtensions
     /// <param name="separator">A string that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(this string input, string separator, StringSplitOptions options) =>
-        new(input.AsSpan(), separator, options);
+    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(
+        this string input,
+        string separator,
+        StringSplitOptions options
+    ) => new(input.AsSpan(), separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -118,8 +139,11 @@ public static class StringExtensions
     /// <param name="separator">A string that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(this ReadOnlySpan<char> input, string separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(
+        this ReadOnlySpan<char> input,
+        string separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified separator and based on the given options.
@@ -128,8 +152,11 @@ public static class StringExtensions
     /// <param name="separator">A string that delimits the substrings in this string.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by <paramref name="separator"/></returns>
-    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(this Span<char> input, string separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByStringEnumerator EnumerateSplitSubstrings(
+        this Span<char> input,
+        string separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
     #endregion
 
     #region StringArray
@@ -140,8 +167,11 @@ public static class StringExtensions
     /// <param name="separator">An array of strings that delimit the substrings in this string or an empty array that contains no delimiters.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one ore more strings in <paramref name="separator"/></returns>
-    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(this string input, string[] separator, StringSplitOptions options) =>
-        new(input.AsSpan(), separator, options);
+    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(
+        this string input,
+        string[] separator,
+        StringSplitOptions options
+    ) => new(input.AsSpan(), separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified delimiting strings and based on the given options.
@@ -150,8 +180,11 @@ public static class StringExtensions
     /// <param name="separator">An array of strings that delimit the substrings in this string or an empty array that contains no delimiters.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one ore more strings in <paramref name="separator"/></returns>
-    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(this ReadOnlySpan<char> input, string[] separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(
+        this ReadOnlySpan<char> input,
+        string[] separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
 
     /// <summary>
     /// Returns an enumeration of substrings separated by specified delimiting strings and based on the given options.
@@ -160,8 +193,10 @@ public static class StringExtensions
     /// <param name="separator">An array of strings that delimit the substrings in this string or an empty array that contains no delimiters.</param>
     /// <param name="options">A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.</param>
     /// <returns>An enumeration of substrings that are delimited by one ore more strings in <paramref name="separator"/></returns>
-    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(this Span<char> input, string[] separator, StringSplitOptions options) =>
-        new(input, separator, options);
+    public static StringSplitByStringArrayEnumerator EnumerateSplitSubstrings(
+        this Span<char> input,
+        string[] separator,
+        StringSplitOptions options
+    ) => new(input, separator, options);
     #endregion
 }
-

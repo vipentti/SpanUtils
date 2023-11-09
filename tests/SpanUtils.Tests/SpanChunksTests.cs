@@ -41,81 +41,50 @@ public class SpanChunksTests
     [Fact]
     public void ThrowsWhenChunkSizeIsZero()
     {
-        FluentActions.Invoking(() =>
-        {
-            var data = new[] { 0, };
-            _ = data.GetChunksEnumerator(0);
-        }).Should().ThrowExactly<ArgumentException>()
+        FluentActions
+            .Invoking(() =>
+            {
+                var data = new[] { 0, };
+                _ = data.GetChunksEnumerator(0);
+            })
+            .Should()
+            .ThrowExactly<ArgumentException>()
             .WithMessage("Chunk size must be greater than 0*");
     }
 
-    public static readonly TheoryData<int[], int, bool, int[][]> Chunks = new()
-    {
+    public static readonly TheoryData<int[], int, bool, int[][]> Chunks =
+        new()
         {
-            new[] { 0, 1, 2, },
-            1,
-            true,
-            new[]
+            { new[] { 0, 1, 2, }, 1, true, new[] { new[] { 0, }, new[] { 1, }, new[] { 2, }, } },
             {
-                new[] { 0, },
-                new[] { 1, },
-                new[] { 2, },
-            }
-        },
-        {
-            new[] { 0, 1, 2, 3, 4, 5 },
-            2,
-            true,
-            new[]
+                new[] { 0, 1, 2, 3, 4, 5 },
+                2,
+                true,
+                new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 }, }
+            },
             {
-                new[] { 0, 1 },
-                new[] { 2, 3 },
-                new[] { 4, 5 },
-            }
-        },
-        {
-            new[] { 0, 1, 2, 3, 4, 5 },
-            3,
-            true,
-            new[]
+                new[] { 0, 1, 2, 3, 4, 5 },
+                3,
+                true,
+                new[] { new[] { 0, 1, 2 }, new[] { 3, 4, 5 }, }
+            },
             {
-                new[] { 0, 1, 2 },
-                new[] { 3, 4, 5 },
-            }
-        },
-        {
-            new[] { 0, 1, 2, 3, 4, 5, 6 },
-            2,
-            true,
-            new[]
+                new[] { 0, 1, 2, 3, 4, 5, 6 },
+                2,
+                true,
+                new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 }, }
+            },
             {
-                new[] { 0, 1 },
-                new[] { 2, 3 },
-                new[] { 4, 5 },
-            }
-        },
-        {
-            new[] { 0, 1, 2, 3, 4, 5, 6 },
-            2,
-            false,
-            new[]
+                new[] { 0, 1, 2, 3, 4, 5, 6 },
+                2,
+                false,
+                new[] { new[] { 0, 1 }, new[] { 2, 3 }, new[] { 4, 5 }, new[] { 6 }, }
+            },
             {
-                new[] { 0, 1 },
-                new[] { 2, 3 },
-                new[] { 4, 5 },
-                new[] { 6 },
-            }
-        },
-        {
-            new[] { 0, 1, 2, 3, 4, 5, 6, 7 },
-            3,
-            false,
-            new[]
-            {
-                new[] { 0, 1, 2 },
-                new[] { 3, 4, 5 },
-                new[] { 6, 7 },
-            }
-        },
-    };
+                new[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+                3,
+                false,
+                new[] { new[] { 0, 1, 2 }, new[] { 3, 4, 5 }, new[] { 6, 7 }, }
+            },
+        };
 }
