@@ -1,4 +1,8 @@
-﻿using FluentAssertions.Execution;
+﻿// Copyright 2023 Ville Penttinen
+// Distributed under the MIT License.
+// https://github.com/vipentti/SpanUtils/blob/main/LICENSE.md
+
+using FluentAssertions.Execution;
 using SpanUtils.Extensions;
 
 namespace SpanUtils.Tests;
