@@ -47,8 +47,8 @@ foreach (Span<int> chunk in data.EnumerateChunks(chunkSize, exact: true))
 }
 ```
 
-For more examples of usage see the tests in [tests/SpanUtils.Tests](./tests/SpanUtils.Tests/)
+For more examples of usage see the tests in [tests/SpanUtils.Tests](https://github.com/vipentti/SpanUtils/tree/main/tests/SpanUtils.Tests)
 
 ## License
 
-SpanUtils is licensed under the [MIT License](./LICENSE.md)
+SpanUtils is licensed under the [MIT License](https://github.com/vipentti/SpanUtils/blob/main/LICENSE.md)
