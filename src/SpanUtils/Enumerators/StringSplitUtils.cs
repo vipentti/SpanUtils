@@ -68,20 +68,20 @@ internal static class StringSplitUtils
         return true;
     }
 
-    public static readonly string[] EmptyStringArray = Array.Empty<string>();
+    public static readonly string[] EmptyStringArray = [];
 
-    public static readonly char[] NewlineChars = new[]
-    {
+    public static readonly char[] NewlineChars =
+    [
         '\n', // LINE FEED (U+000A)
         '\r', // CARRIAGE RETURN (U+000D)
         '\f', // FORM FEED (U+000C)
         '\u2028', // LINE SEPARATOR (U+2028)
         '\u0085', // NEXT LINE (U+0085)
         '\u2029', // PARAGRAPH SEPARATOR (U+2029)
-    };
+    ];
 
-    public static readonly string[] NewLineStrings = new[]
-    {
+    public static readonly string[] NewLineStrings =
+    [
         "\r\n", // CARRIAGE RETURN (U+000D) + LINE FEED (U+000A)
         "\n", // LINE FEED (U+000A)
         "\r", // CARRIAGE RETURN (U+000D)
@@ -89,10 +89,10 @@ internal static class StringSplitUtils
         "\u2028", // LINE SEPARATOR (U+2028)
         "\u0085", // NEXT LINE (U+0085)
         "\u2029", // PARAGRAPH SEPARATOR (U+2029)
-    };
+    ];
 
-    public static readonly string[] WhitespaceStrings = new[]
-    {
+    public static readonly string[] WhitespaceStrings =
+    [
         " ", // SPACE (U+0020)
         "\u00A0", // NO-BREAK SPACE (U+00A0)
         "\u1680", // OGHAM SPACE MARK (U+1680)
@@ -118,11 +118,11 @@ internal static class StringSplitUtils
         "\f", // FORM FEED (U+000C)
         "\r", // CARRIAGE RETURN (U+000D)
         "\u0085", // NEXT LINE (U+0085)
-    };
+    ];
 
     // https://learn.microsoft.com/en-us/dotnet/api/system.char.iswhitespace?view=net-7.0#remarks
-    public static readonly char[] WhitespaceChars = new[]
-    {
+    public static readonly char[] WhitespaceChars =
+    [
         ' ', // SPACE (U+0020)
         '\u00A0', // NO-BREAK SPACE (U+00A0)
         '\u1680', // OGHAM SPACE MARK (U+1680)
@@ -148,5 +148,5 @@ internal static class StringSplitUtils
         '\f', // FORM FEED (U+000C)
         '\r', // CARRIAGE RETURN (U+000D)
         '\u0085', // NEXT LINE (U+0085)
-    };
+    ];
 }
