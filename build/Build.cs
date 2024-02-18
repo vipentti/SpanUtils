@@ -45,10 +45,6 @@ namespace build;
         "7.x",
         "8.x",
     ]
-    , InvokedTargets =
-    [
-        nameof(IUseLocalDotNetTools.RestoreLocalTools),
-    ]
 )]
 class Build : StandardNukeBuild, IUseCsharpier, IUseLocalDotNetTools
 {
@@ -63,6 +59,12 @@ class Build : StandardNukeBuild, IUseCsharpier, IUseLocalDotNetTools
     [
         From<IUseDotNetFormat>().Linter,
         From<IUseCsharpier>().Linter,
+    ];
+
+    public override IEnumerable<IProvideFormatter> Formatters =>
+    [
+        From<IUseDotNetFormat>().Formatter,
+        From<IUseCsharpier>().Formatter,
     ];
 
     bool IUseCsharpier.UseGlobalTool { get; } = false;
