@@ -38,6 +38,19 @@ public class SpanReverseTests
 
         data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4, });
     }
+
+    [Fact]
+    public void CanUseRefsToMutateForeach()
+    {
+        var data = new[] { 0, 1, 2, 3 };
+
+        foreach (ref var valueref in data.EnumerateReverse())
+        {
+            valueref++;
+        }
+
+        data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4, });
+    }
 #endif
 
     public static readonly TheoryData<int[], int[]> Reverse =
