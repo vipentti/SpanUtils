@@ -24,13 +24,7 @@ public static class SpanWhereExtensions
         Predicate<T> predicate
     ) => new(source, predicate);
 
-    /// <summary>
-    /// Enumerate the contents of the source yielding values which match the given predicate.
-    /// </summary>
-    /// <typeparam name="T">Type of values</typeparam>
-    /// <param name="source">Source to enumerate</param>
-    /// <param name="predicate">Predicate used for selecting values to yield</param>
-    /// <returns>Enumerator which yields values which match the given predicate</returns>
+    /// <inheritdoc cref="EnumerateWhere{T}(Span{T}, Predicate{T})"/>
     public static SpanWhereEnumerator<T> EnumerateWhere<T>(
         this T[] source,
         Predicate<T> predicate
