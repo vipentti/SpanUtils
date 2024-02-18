@@ -16,50 +16,56 @@ namespace build;
     GitHubActionsImage.WindowsLatest,
     GitHubActionsImage.UbuntuLatest,
     GitHubActionsImage.MacOsLatest,
-    OnPullRequestBranches = new[] { MainBranch, DevelopBranch },
+    OnPullRequestBranches = [MainBranch, DevelopBranch],
     PublishArtifacts = false,
     FetchDepth = 0 // fetch full history
-    , SetupDotnetVersions = new[]
-    {
+    , SetupDotnetVersions =
+    [
         "6.x",
         "7.x",
         "8.x",
-    }
-    , InvokedTargets = new[]
-    {
+    ]
+    , InvokedTargets =
+    [
+        nameof(IUseLocalDotNetTools.RestoreLocalTools),
         nameof(ITest.Test),
         nameof(IUseLinters.InstallLinters),
         nameof(IUseLinters.Lint),
         nameof(IValidatePackages.ValidatePackages),
-    })]
+    ])]
 [StandardPublishGitHubActions(
     "publish",
     GitHubActionsImage.WindowsLatest,
     GitHubActionsImage.UbuntuLatest,
     GitHubActionsImage.MacOsLatest
-    , OnPushBranches = new[] { MainBranch }
-    , SetupDotnetVersions = new[]
-    {
+    , OnPushBranches = [MainBranch]
+    , SetupDotnetVersions =
+    [
         "6.x",
         "7.x",
         "8.x",
-    }
+    ]
+    , InvokedTargets =
+    [
+        nameof(IUseLocalDotNetTools.RestoreLocalTools),
+    ]
 )]
-class Build : StandardNukeBuild, IUseCsharpier
+class Build : StandardNukeBuild, IUseCsharpier, IUseLocalDotNetTools
 {
     public override string OriginalRepositoryName { get; } = "SpanUtils";
     public override string MainReleaseBranch { get; } = MainBranch;
-    public override IEnumerable<Project> ProjectsToPack => new[]
-    {
+    public override IEnumerable<Project> ProjectsToPack =>
+    [
         CurrentSolution.GetSolutionFolder("src").GetProject("SpanUtils"),
-    };
+    ];
 
-    public override IEnumerable<IProvideLinter> Linters => new[]
-    {
+    public override IEnumerable<IProvideLinter> Linters =>
+    [
         From<IUseDotNetFormat>().Linter,
         From<IUseCsharpier>().Linter,
-    };
-    bool IUseCsharpier.UseGlobalTool { get; } = true;
+    ];
+
+    bool IUseCsharpier.UseGlobalTool { get; } = false;
 
     public override IEnumerable<Project> TestProjects => CurrentSolution.GetAllProjects("*Tests*");
 
