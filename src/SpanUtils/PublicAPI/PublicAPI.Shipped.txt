@@ -1,0 +1,178 @@
+#nullable enable
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>.Deconstruct(out System.ReadOnlySpan<T> span, out int index) -> void
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>.Index.get -> int
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>.ReadOnlySpanChunk() -> void
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>.Span.get -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.ReadOnlySpanChunk<T>.ToReadOnlySpan() -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.Current.get -> SpanUtils.Enumerators.ReadOnlySpanChunk<T>
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.ReadOnlySpanChunksEnumerator() -> void
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.ReadOnlySpanChunksEnumerator(System.ReadOnlySpan<T> span, int chunkSize, bool exact = true) -> void
+SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.Current.get -> T
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.Length.get -> int
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.ReadOnlySpanReverseEnumerator() -> void
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.ReadOnlySpanReverseEnumerator(System.ReadOnlySpan<T> span) -> void
+SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.Current.get -> TOutput
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.GetEnumerator() -> SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.Length.get -> int
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.MoveNext() -> bool
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.ReadOnlySpanSelectEnumerator() -> void
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.ReadOnlySpanSelectEnumerator(System.ReadOnlySpan<TInput> span, System.Func<TInput, TOutput>! selector) -> void
+SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>.Reset() -> void
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.Current.get -> T
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.Length.get -> int
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.ReadOnlySpanWhereEnumerator() -> void
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.ReadOnlySpanWhereEnumerator(System.ReadOnlySpan<T> span, System.Predicate<T>! predicate) -> void
+SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>.Deconstruct(out System.ReadOnlySpan<T> span, out int index) -> void
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>.Index.get -> int
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>.ReadOnlySpanWindow() -> void
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>.Span.get -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.ReadOnlySpanWindow<T>.ToReadOnlySpan() -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.Current.get -> SpanUtils.Enumerators.ReadOnlySpanWindow<T>
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.ReadOnlySpanWindowsEnumerator() -> void
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.ReadOnlySpanWindowsEnumerator(System.ReadOnlySpan<T> span, int windowSize) -> void
+SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.SpanChunk<T>
+SpanUtils.Enumerators.SpanChunk<T>.Deconstruct(out System.Span<T> span, out int index) -> void
+SpanUtils.Enumerators.SpanChunk<T>.Index.get -> int
+SpanUtils.Enumerators.SpanChunk<T>.Span.get -> System.Span<T>
+SpanUtils.Enumerators.SpanChunk<T>.SpanChunk() -> void
+SpanUtils.Enumerators.SpanChunk<T>.ToReadOnlySpan() -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.SpanChunk<T>.ToSpan() -> System.Span<T>
+SpanUtils.Enumerators.SpanChunksEnumerator<T>
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.Current.get -> SpanUtils.Enumerators.SpanChunk<T>
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.SpanChunksEnumerator<T>
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.SpanChunksEnumerator() -> void
+SpanUtils.Enumerators.SpanChunksEnumerator<T>.SpanChunksEnumerator(System.Span<T> span, int chunkSize, bool exact = true) -> void
+SpanUtils.Enumerators.SpanReverseEnumerator<T>
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.Current.get -> T
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.SpanReverseEnumerator<T>
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.SpanReverseEnumerator() -> void
+SpanUtils.Enumerators.SpanReverseEnumerator<T>.SpanReverseEnumerator(System.Span<T> span) -> void
+SpanUtils.Enumerators.SpanWhereEnumerator<T>
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.Current.get -> T
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.SpanWhereEnumerator<T>
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.Length.get -> int
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.SpanWhereEnumerator() -> void
+SpanUtils.Enumerators.SpanWhereEnumerator<T>.SpanWhereEnumerator(System.Span<T> span, System.Predicate<T>! predicate) -> void
+SpanUtils.Enumerators.SpanWindow<T>
+SpanUtils.Enumerators.SpanWindow<T>.Deconstruct(out System.Span<T> span, out int index) -> void
+SpanUtils.Enumerators.SpanWindow<T>.Index.get -> int
+SpanUtils.Enumerators.SpanWindow<T>.Span.get -> System.Span<T>
+SpanUtils.Enumerators.SpanWindow<T>.SpanWindow() -> void
+SpanUtils.Enumerators.SpanWindow<T>.ToReadOnlySpan() -> System.ReadOnlySpan<T>
+SpanUtils.Enumerators.SpanWindow<T>.ToSpan() -> System.Span<T>
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.Current.get -> SpanUtils.Enumerators.SpanWindow<T>
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.GetEnumerator() -> SpanUtils.Enumerators.SpanWindowsEnumerator<T>
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.MoveNext() -> bool
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.Reset() -> void
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.SpanWindowsEnumerator() -> void
+SpanUtils.Enumerators.SpanWindowsEnumerator<T>.SpanWindowsEnumerator(System.Span<T> span, int windowSize) -> void
+SpanUtils.Enumerators.StringSplitByCharArrayEnumerator
+SpanUtils.Enumerators.StringSplitByCharArrayEnumerator.Current.get -> System.ReadOnlySpan<char>
+SpanUtils.Enumerators.StringSplitByCharArrayEnumerator.GetEnumerator() -> SpanUtils.Enumerators.StringSplitByCharArrayEnumerator
+SpanUtils.Enumerators.StringSplitByCharArrayEnumerator.MoveNext() -> bool
+SpanUtils.Enumerators.StringSplitByCharArrayEnumerator.StringSplitByCharArrayEnumerator() -> void
+SpanUtils.Enumerators.StringSplitByCharEnumerator
+SpanUtils.Enumerators.StringSplitByCharEnumerator.Current.get -> System.ReadOnlySpan<char>
+SpanUtils.Enumerators.StringSplitByCharEnumerator.GetEnumerator() -> SpanUtils.Enumerators.StringSplitByCharEnumerator
+SpanUtils.Enumerators.StringSplitByCharEnumerator.MoveNext() -> bool
+SpanUtils.Enumerators.StringSplitByCharEnumerator.StringSplitByCharEnumerator() -> void
+SpanUtils.Enumerators.StringSplitByLinesEnumerator
+SpanUtils.Enumerators.StringSplitByLinesEnumerator.Current.get -> System.ReadOnlySpan<char>
+SpanUtils.Enumerators.StringSplitByLinesEnumerator.GetEnumerator() -> SpanUtils.Enumerators.StringSplitByLinesEnumerator
+SpanUtils.Enumerators.StringSplitByLinesEnumerator.MoveNext() -> bool
+SpanUtils.Enumerators.StringSplitByLinesEnumerator.StringSplitByLinesEnumerator() -> void
+SpanUtils.Enumerators.StringSplitByStringArrayEnumerator
+SpanUtils.Enumerators.StringSplitByStringArrayEnumerator.Current.get -> System.ReadOnlySpan<char>
+SpanUtils.Enumerators.StringSplitByStringArrayEnumerator.GetEnumerator() -> SpanUtils.Enumerators.StringSplitByStringArrayEnumerator
+SpanUtils.Enumerators.StringSplitByStringArrayEnumerator.MoveNext() -> bool
+SpanUtils.Enumerators.StringSplitByStringArrayEnumerator.StringSplitByStringArrayEnumerator() -> void
+SpanUtils.Enumerators.StringSplitByStringEnumerator
+SpanUtils.Enumerators.StringSplitByStringEnumerator.Current.get -> System.ReadOnlySpan<char>
+SpanUtils.Enumerators.StringSplitByStringEnumerator.GetEnumerator() -> SpanUtils.Enumerators.StringSplitByStringEnumerator
+SpanUtils.Enumerators.StringSplitByStringEnumerator.MoveNext() -> bool
+SpanUtils.Enumerators.StringSplitByStringEnumerator.StringSplitByStringEnumerator() -> void
+SpanUtils.Extensions.ReadOnlySpanChunksExtensions
+SpanUtils.Extensions.ReadOnlySpanReverseExtensions
+SpanUtils.Extensions.ReadOnlySpanSelectExtensions
+SpanUtils.Extensions.ReadOnlySpanWhereExtensions
+SpanUtils.Extensions.ReadOnlySpanWindowsExtensions
+SpanUtils.Extensions.SpanChunksExtensions
+SpanUtils.Extensions.SpanReverseExtensions
+SpanUtils.Extensions.SpanWhereExtensions
+SpanUtils.Extensions.SpanWindowsExtensions
+SpanUtils.Extensions.StringExtensions
+static SpanUtils.Enumerators.ReadOnlySpanChunk<T>.implicit operator System.ReadOnlySpan<T>(SpanUtils.Enumerators.ReadOnlySpanChunk<T> entry) -> System.ReadOnlySpan<T>
+static SpanUtils.Enumerators.ReadOnlySpanWindow<T>.implicit operator System.ReadOnlySpan<T>(SpanUtils.Enumerators.ReadOnlySpanWindow<T> entry) -> System.ReadOnlySpan<T>
+static SpanUtils.Enumerators.SpanChunk<T>.implicit operator System.ReadOnlySpan<T>(SpanUtils.Enumerators.SpanChunk<T> entry) -> System.ReadOnlySpan<T>
+static SpanUtils.Enumerators.SpanChunk<T>.implicit operator System.Span<T>(SpanUtils.Enumerators.SpanChunk<T> entry) -> System.Span<T>
+static SpanUtils.Enumerators.SpanWindow<T>.implicit operator System.ReadOnlySpan<T>(SpanUtils.Enumerators.SpanWindow<T> entry) -> System.ReadOnlySpan<T>
+static SpanUtils.Enumerators.SpanWindow<T>.implicit operator System.Span<T>(SpanUtils.Enumerators.SpanWindow<T> entry) -> System.Span<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this System.ReadOnlySpan<T> source, int size) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this System.ReadOnlySpan<T> source, int size, bool exact) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this System.Span<T> source, int size) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this System.Span<T> source, int size, bool exact) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this T[]! source, int size) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanChunksExtensions.EnumerateReadOnlyChunks<T>(this T[]! source, int size, bool exact) -> SpanUtils.Enumerators.ReadOnlySpanChunksEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanReverseExtensions.EnumerateReadOnlyReverse<T>(this System.ReadOnlySpan<T> source) -> SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanReverseExtensions.EnumerateReadOnlyReverse<T>(this System.Span<T> source) -> SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanReverseExtensions.EnumerateReadOnlyReverse<T>(this T[]! source) -> SpanUtils.Enumerators.ReadOnlySpanReverseEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanSelectExtensions.EnumerateReadOnlySelect<TInput, TOutput>(this System.ReadOnlySpan<TInput> source, System.Func<TInput, TOutput>! selector) -> SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>
+static SpanUtils.Extensions.ReadOnlySpanSelectExtensions.EnumerateReadOnlySelect<TInput, TOutput>(this System.Span<TInput> source, System.Func<TInput, TOutput>! selector) -> SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>
+static SpanUtils.Extensions.ReadOnlySpanSelectExtensions.EnumerateReadOnlySelect<TInput, TOutput>(this TInput[]! source, System.Func<TInput, TOutput>! selector) -> SpanUtils.Enumerators.ReadOnlySpanSelectEnumerator<TInput, TOutput>
+static SpanUtils.Extensions.ReadOnlySpanWhereExtensions.EnumerateReadOnlyWhere<T>(this System.ReadOnlySpan<T> source, System.Predicate<T>! predicate) -> SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanWhereExtensions.EnumerateReadOnlyWhere<T>(this System.Span<T> source, System.Predicate<T>! predicate) -> SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanWhereExtensions.EnumerateReadOnlyWhere<T>(this T[]! source, System.Predicate<T>! predicate) -> SpanUtils.Enumerators.ReadOnlySpanWhereEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanWindowsExtensions.EnumerateReadOnlyWindows<T>(this System.ReadOnlySpan<T> source, int size) -> SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanWindowsExtensions.EnumerateReadOnlyWindows<T>(this System.Span<T> source, int size) -> SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>
+static SpanUtils.Extensions.ReadOnlySpanWindowsExtensions.EnumerateReadOnlyWindows<T>(this T[]! source, int size) -> SpanUtils.Enumerators.ReadOnlySpanWindowsEnumerator<T>
+static SpanUtils.Extensions.SpanChunksExtensions.EnumerateChunks<T>(this System.Span<T> source, int size) -> SpanUtils.Enumerators.SpanChunksEnumerator<T>
+static SpanUtils.Extensions.SpanChunksExtensions.EnumerateChunks<T>(this System.Span<T> source, int size, bool exact) -> SpanUtils.Enumerators.SpanChunksEnumerator<T>
+static SpanUtils.Extensions.SpanChunksExtensions.EnumerateChunks<T>(this T[]! source, int size) -> SpanUtils.Enumerators.SpanChunksEnumerator<T>
+static SpanUtils.Extensions.SpanChunksExtensions.EnumerateChunks<T>(this T[]! source, int size, bool exact) -> SpanUtils.Enumerators.SpanChunksEnumerator<T>
+static SpanUtils.Extensions.SpanReverseExtensions.EnumerateReverse<T>(this System.Span<T> source) -> SpanUtils.Enumerators.SpanReverseEnumerator<T>
+static SpanUtils.Extensions.SpanReverseExtensions.EnumerateReverse<T>(this T[]! source) -> SpanUtils.Enumerators.SpanReverseEnumerator<T>
+static SpanUtils.Extensions.SpanWhereExtensions.EnumerateWhere<T>(this System.Span<T> source, System.Predicate<T>! predicate) -> SpanUtils.Enumerators.SpanWhereEnumerator<T>
+static SpanUtils.Extensions.SpanWhereExtensions.EnumerateWhere<T>(this T[]! source, System.Predicate<T>! predicate) -> SpanUtils.Enumerators.SpanWhereEnumerator<T>
+static SpanUtils.Extensions.SpanWindowsExtensions.EnumerateWindows<T>(this System.Span<T> source, int size) -> SpanUtils.Enumerators.SpanWindowsEnumerator<T>
+static SpanUtils.Extensions.SpanWindowsExtensions.EnumerateWindows<T>(this T[]! source, int size) -> SpanUtils.Enumerators.SpanWindowsEnumerator<T>
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitLines(this string! input) -> SpanUtils.Enumerators.StringSplitByLinesEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitLines(this System.ReadOnlySpan<char> input) -> SpanUtils.Enumerators.StringSplitByLinesEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitLines(this System.Span<char> input) -> SpanUtils.Enumerators.StringSplitByLinesEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this string! input, char separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this string! input, char[]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharArrayEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this string! input, string! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this string! input, string![]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringArrayEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.ReadOnlySpan<char> input, char separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.ReadOnlySpan<char> input, char[]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharArrayEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.ReadOnlySpan<char> input, string! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.ReadOnlySpan<char> input, string![]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringArrayEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.Span<char> input, char separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.Span<char> input, char[]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByCharArrayEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.Span<char> input, string! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringEnumerator
+static SpanUtils.Extensions.StringExtensions.EnumerateSplitSubstrings(this System.Span<char> input, string![]! separator, System.StringSplitOptions options) -> SpanUtils.Enumerators.StringSplitByStringArrayEnumerator
