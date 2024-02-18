@@ -59,8 +59,6 @@ public class StringSplitTests
         ("special\ncharacters\r\nand line\rbreaks", '\r'),
         ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", ';'),
         ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", '|'),
-        ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", ';'),
-        ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", '|'),
         (
             "The handsome, energetic, young dog was playing with his smaller, more lethargic litter mate.",
             ','
@@ -178,8 +176,6 @@ public class StringSplitTests
         ("spaces and tabs\tare tricky", "\t"),
         ("special\ncharacters\r\nand line\rbreaks", "\n"),
         ("special\ncharacters\r\nand line\rbreaks", "\r"),
-        ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", ";"),
-        ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", "|"),
         ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", ";"),
         ("foo;b4||a4;;bar;;baz;;;b4||a4;buz", "|"),
         (

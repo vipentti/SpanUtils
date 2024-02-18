@@ -44,7 +44,17 @@ public readonly ref struct SpanChunk<T>
     public static implicit operator Span<T>(SpanChunk<T> entry) => entry.Span;
 
     /// <summary>
+    /// Return the contained Span
+    /// </summary>
+    public Span<T> ToSpan() => Span;
+
+    /// <summary>
     /// Support implicit conversion
     /// </summary>
     public static implicit operator ReadOnlySpan<T>(SpanChunk<T> entry) => entry.Span;
+
+    /// <summary>
+    /// Return the contained Span as ReadOnlySpan
+    /// </summary>
+    public ReadOnlySpan<T> ToReadOnlySpan() => Span;
 }
