@@ -7,9 +7,6 @@
     <RootNamespace>SpanUtils</RootNamespace>
     <Description>SpanUtils is a .NET library providing utilities and extensions for working with System.Span</Description>
 
-    <Nullable>enable</Nullable>
-    <LangVersion>11.0</LangVersion>
-
     <IsPackable>true</IsPackable>
     <PackageProjectUrl>https://github.com/vipentti/SpanUtils</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vipentti/SpanUtils</RepositoryUrl>
