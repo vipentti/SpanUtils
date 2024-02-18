@@ -9,12 +9,12 @@ namespace SpanUtils.Enumerators;
 /// <summary>
 /// Enumerate over a <see cref="ReadOnlySpan{T}"/> by mapping values with the given function
 /// </summary>
-/// <typeparam name="T">Input type</typeparam>
-/// <typeparam name="U">Output type</typeparam>
-public ref struct ReadOnlySpanSelectEnumerator<T, U>
+/// <typeparam name="TInput">Input type</typeparam>
+/// <typeparam name="TOutput">Output type</typeparam>
+public ref struct ReadOnlySpanSelectEnumerator<TInput, TOutput>
 {
-    private readonly ReadOnlySpan<T> _span;
-    private readonly Func<T, U> _selector;
+    private readonly ReadOnlySpan<TInput> _span;
+    private readonly Func<TInput, TOutput> _selector;
     private int _index;
 
     /// <summary>
@@ -23,7 +23,7 @@ public ref struct ReadOnlySpanSelectEnumerator<T, U>
     /// </summary>
     /// <param name="span">Span to enumerate</param>
     /// <param name="selector">Function to use for mapping the values</param>
-    public ReadOnlySpanSelectEnumerator(ReadOnlySpan<T> span, Func<T, U> selector)
+    public ReadOnlySpanSelectEnumerator(ReadOnlySpan<TInput> span, Func<TInput, TOutput> selector)
     {
         _span = span;
         _index = -1;
@@ -39,12 +39,12 @@ public ref struct ReadOnlySpanSelectEnumerator<T, U>
     /// <summary>
     /// Returns this instance as an enumerator.
     /// </summary>
-    public readonly ReadOnlySpanSelectEnumerator<T, U> GetEnumerator() => this;
+    public readonly ReadOnlySpanSelectEnumerator<TInput, TOutput> GetEnumerator() => this;
 
     /// <summary>
     /// Gets the current value
     /// </summary>
-    public U Current { get; private set; }
+    public TOutput Current { get; private set; }
 
     /// <summary>
     /// Resets this enumerator
