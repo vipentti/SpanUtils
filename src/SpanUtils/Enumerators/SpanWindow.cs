@@ -44,7 +44,17 @@ public readonly ref struct SpanWindow<T>
     public static implicit operator Span<T>(SpanWindow<T> entry) => entry.Span;
 
     /// <summary>
+    /// Return the contained Span
+    /// </summary>
+    public Span<T> ToSpan() => Span;
+
+    /// <summary>
     /// Support implicit conversion
     /// </summary>
     public static implicit operator ReadOnlySpan<T>(SpanWindow<T> entry) => entry.Span;
+
+    /// <summary>
+    /// Return the contained Span as ReadOnlySpan
+    /// </summary>
+    public ReadOnlySpan<T> ToReadOnlySpan() => Span;
 }
