@@ -36,7 +36,7 @@ public class SpanReverseTests
             valueref++;
         }
 
-        data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4, });
+        data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4 });
     }
 
     [Fact]
@@ -49,16 +49,15 @@ public class SpanReverseTests
             valueref++;
         }
 
-        data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4, });
+        data.Should().BeEquivalentTo(new[] { 1, 2, 3, 4 });
     }
 #endif
 
-    public static readonly TheoryData<int[], int[]> Reverse =
-        new()
-        {
-            { Array.Empty<int>(), Array.Empty<int>() },
-            { new int[] { 0 }, new int[] { 0 } },
-            { new int[] { 0, 1 }, new int[] { 1, 0 } },
-            { new[] { 0, 1, 2, }, new[] { 2, 1, 0, } },
-        };
+    public static readonly TheoryData<int[], int[]> Reverse = new()
+    {
+        { Array.Empty<int>(), Array.Empty<int>() },
+        { new int[] { 0 }, new int[] { 0 } },
+        { new int[] { 0, 1 }, new int[] { 1, 0 } },
+        { new[] { 0, 1, 2 }, new[] { 2, 1, 0 } },
+    };
 }

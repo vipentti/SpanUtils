@@ -22,12 +22,11 @@ public class ReadOnlySpanWhereTests
         result.Should().BeEquivalentTo(expected);
     }
 
-    public static readonly TheoryData<int[], Predicate<int>, int[]> PredicateTestCases =
-        new()
-        {
-            { Array.Empty<int>(), _ => false, Array.Empty<int>() },
-            { new[] { 0, 1, 2 }, it => it >= 1, new[] { 1, 2 } },
-            { new[] { 3, 4, 5 }, it => it == 4, new[] { 4 } },
-            { new[] { 0, 1, 2 }, _ => true, new[] { 0, 1, 2 } },
-        };
+    public static readonly TheoryData<int[], Predicate<int>, int[]> PredicateTestCases = new()
+    {
+        { Array.Empty<int>(), _ => false, Array.Empty<int>() },
+        { new[] { 0, 1, 2 }, it => it >= 1, new[] { 1, 2 } },
+        { new[] { 3, 4, 5 }, it => it == 4, new[] { 4 } },
+        { new[] { 0, 1, 2 }, _ => true, new[] { 0, 1, 2 } },
+    };
 }

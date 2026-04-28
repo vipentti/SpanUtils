@@ -39,7 +39,7 @@ public class SpanWhereTests
             ++value;
         }
 
-        data.Should().BeEquivalentTo(new[] { 0, 2, 3, 4, });
+        data.Should().BeEquivalentTo(new[] { 0, 2, 3, 4 });
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class SpanWhereTests
             ++value;
         }
 
-        data.Should().BeEquivalentTo(new[] { 0, 2, 3, 4, });
+        data.Should().BeEquivalentTo(new[] { 0, 2, 3, 4 });
     }
 #endif
 }

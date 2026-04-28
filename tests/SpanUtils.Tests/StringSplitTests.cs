@@ -220,8 +220,8 @@ public class StringSplitTests
         (";;;;;;;;;;;;;;", new[] { ";" }),
         ("apple, orange, banana, peach", new[] { ", " }),
         ("apple, orange, banana, peach", new[] { "" }),
-        ("apple, orange, banana, peach", new[] { "", "", }),
-        ("apple, orange, banana, peach", new[] { "", "", "", }),
+        ("apple, orange, banana, peach", new[] { "", "" }),
+        ("apple, orange, banana, peach", new[] { "", "", "" }),
         ("apple, orange, banana, peach", Array.Empty<string>()),
         ("apple, orange, banana, peach", new[] { "not found" }),
         ("apple, orange, banana, peach", new[] { "longer than apple, orange, banana, peach" }),
@@ -280,20 +280,19 @@ public class StringSplitTests
         parts.Should().BeEquivalentTo(actualSplit);
     }
 
-    public static readonly TheoryData<string> LinesTestCases =
-        new()
-        {
-            "",
-            "no lines",
-            "x\rand\r\n xx \t\r\n\r\n afaf \r\n tes special\ncharacters\r\nand line\rbreaks\r end",
-            "supports\fvarous\rforms\nof\r\nnewlines\u2028and\u0085and\u2029yay",
-            @"
+    public static readonly TheoryData<string> LinesTestCases = new()
+    {
+        "",
+        "no lines",
+        "x\rand\r\n xx \t\r\n\r\n afaf \r\n tes special\ncharacters\r\nand line\rbreaks\r end",
+        "supports\fvarous\rforms\nof\r\nnewlines\u2028and\u0085and\u2029yay",
+        @"
 this
 is a
 multi-line
 string
 ",
-        };
+    };
 
     [Theory]
     [MemberData(nameof(LinesTestCases))]

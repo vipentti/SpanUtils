@@ -45,7 +45,7 @@ public class ReadOnlySpanChunksTests
         FluentActions
             .Invoking(() =>
             {
-                var data = new[] { 0, };
+                var data = new[] { 0 };
                 _ = data.EnumerateReadOnlyChunks(0);
             })
             .Should()
