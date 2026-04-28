@@ -22,7 +22,9 @@ public ref struct SpanWhereEnumerator<T>
 #if NET7_0_OR_GREATER
     private ref T _current;
 #else
+#pragma warning disable IDE0032 // Use auto property
     private T? _current;
+#pragma warning restore IDE0032 // Use auto property
 #endif
 
     /// <summary>
